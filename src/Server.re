@@ -39,11 +39,16 @@ Express.get(app, "/", (_req, res) =>
   Express.sendFile(res, Path.join([|__dirname, "index.html"|]), ())
 );
 
-/* let io = Socket.S.createWithHttp(http); */
-/* let server = Socket.S.create(); */
-/* Socket.S.onConnect(io, socket => */
-/*   Socket.S.Socket.on(socket, message => Js.log(message)) */
-/* ); */
+module Server = BsSocket.Server.Make(Message);
+
+let io = Server.createWithHttp(http);
+
+Server.onConnect(io, socket =>
+  Server.Socket.on(socket, message =>
+    Js.log("message from client:" ++ message)
+  )
+);
+
 let port = 3000;
 
 Http.listen(http, port, () => Printf.printf("listening on *:%d\n", port));
