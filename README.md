@@ -1,4 +1,4 @@
-This is a minimal working example of a client and server (in reason)
+This is a minimal working example of a client and server (written in reason)
 communicating via
 [bs-socket](https://github.com/reasonml-community/bs-socket.io).
 
