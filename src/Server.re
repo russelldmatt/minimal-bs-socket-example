@@ -45,7 +45,7 @@ let io = Server.createWithHttp(http);
 
 Server.onConnect(io, socket =>
   Server.Socket.on(socket, message =>
-    Js.log("message from client:" ++ message)
+    Js.log(Printf.sprintf("message from client: \"%s\"", message))
   )
 );
 

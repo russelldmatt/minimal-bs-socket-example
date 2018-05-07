@@ -34,7 +34,19 @@ var io = Curry._1(Server[/* createWithHttp */0], http);
 
 Curry._2(Server[/* onConnect */15], io, (function (socket) {
         return Curry._2(Server[/* Socket */14][/* on */3], socket, (function (message) {
-                      console.log("message from client:" + message);
+                      console.log(Curry._1(Printf.sprintf(/* Format */[
+                                    /* String_literal */Block.__(11, [
+                                        "message from client: \"",
+                                        /* String */Block.__(2, [
+                                            /* No_padding */0,
+                                            /* Char_literal */Block.__(12, [
+                                                /* "\"" */34,
+                                                /* End_of_format */0
+                                              ])
+                                          ])
+                                      ]),
+                                    "message from client: \"%s\""
+                                  ]), message));
                       return /* () */0;
                     }));
       }));
